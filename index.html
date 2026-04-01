@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maryuri Alvarado Diaz | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #eef4ff;
+      --section-light: #ffffff;
+      --section-blue-1: #e0ebff;
+      --section-blue-2: #d4e3ff;
+      --section-blue-3: #e6efff;
+      --surface: #ffffff;
+      --border: #e5e7eb;
+      --text: #0f172a;
+      --muted: #6b7280;
+      --accent: #1e40af;
+      --accent-soft: #dbeafe;
+      --max: 1120px;
+      --radius: 18px;
+      --shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    .container {
+      width: min(100% - 40px, var(--max));
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 3vw, 3.2rem);
+      line-height: 1.1;
+      margin: 0 0 14px;
+      letter-spacing: -0.03em;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3vw, 2.8rem);
+      line-height: 1.15;
+      margin: 0 0 14px;
+      letter-spacing: -0.02em;
+    }
+
+    .section-intro {
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin-bottom: 32px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(229,231,235,0.9);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0;
+      gap: 18px;
+    }
+
+    .brand {
+      font-weight: 700;
+      font-size: 0.98rem;
+      color: var(--text);
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+    }
+
+    .hero {
+      padding: 84px 0 64px;
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(to bottom, #1e3a8a, #3b82f6);
+      color: #ffffff;
+    }
+
+    .hero p.lead {
+      font-size: 1.12rem;
+      color: #ffffff;
+      max-width: 700px;
+      margin: 0 0 28px;
+    }
+    .hero .proof-pill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: #fff; }
+    .hero .button.primary { background: #ffffff; color: #1e3a8a; border: none; }
+    .hero .button.secondary { border: 1px solid rgba(255,255,255,0.4); color: #fff; }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.9fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 6vw, 4.75rem);
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+      margin: 0 0 22px;
+    }
+
+    .hero p.lead {
+      font-size: 1.12rem;
+      color: #ffffff;
+      max-width: 700px;
+      margin: 0 0 28px;
+    }
+
+    .proof-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+
+    .proof-pill {
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: #fff;
+      color: var(--text);
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+      font-weight: 600;
+      transition: 180ms ease;
+    }
+
+    .button.primary {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .button.secondary {
+      color: var(--accent);
+      background: #fff;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+      text-decoration: none;
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,0.95);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card h3 {
+      margin: 0 0 18px;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #000000;
+    }
+
+    .metric-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .metric {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 12px;
+      align-items: start;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+    }
+
+    .metric:first-child {
+      border-top: none;
+      padding-top: 0;
+    }
+
+    .metric-value {
+      font-size: 1.6rem;
+      font-weight: 700;
+      line-height: 1;
+      color: #000000;
+    }
+
+    .metric-label {
+      color: #000000;
+      font-size: 0.96rem;
+    }
+
+    section {
+      padding: 86px 0;
+      border-bottom: 1px solid var(--border);
+      background: var(--section-light);
+    }
+
+    section:nth-of-type(even) {
+      background: var(--section-blue-1);
+    }
+
+    section:nth-of-type(3n) {
+      background: var(--section-blue-2);
+    }
+
+    section:nth-of-type(5n) {
+      background: var(--section-blue-3);
+    }
+
+    .case-study-grid,
+    .writing-grid,
+    .exec-grid,
+    .approach-grid,
+    .contact-grid {
+      display: grid;
+      gap: 24px;
+    }
+
+    .case-study-grid { grid-template-columns: 1fr 1fr; }
+    .writing-grid { grid-template-columns: 1fr 1fr; }
+    .exec-grid { grid-template-columns: 1fr 1fr 1fr; }
+    .approach-grid { grid-template-columns: 1fr 1fr 1fr; }
+    .contact-grid { grid-template-columns: 1fr 1fr; }
+
+    .card {
+      border: 1px solid rgba(15,23,42,0.06);
+      backdrop-filter: blur(6px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: #fff;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .card-label {
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 14px;
+    }
+
+    .card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.65rem;
+      line-height: 1.2;
+      margin: 0 0 14px;
+    }
+
+    .card p { margin: 0 0 16px; color: var(--muted); }
+
+    .list {
+      margin: 0 0 18px;
+      padding-left: 18px;
+      color: var(--text);
+    }
+
+    .list li { margin-bottom: 8px; }
+
+    .results {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 18px 0 22px;
+    }
+
+    .result-pill {
+      background: var(--accent-soft);
+      color: #1d4ed8;
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .placeholder {
+      margin-top: 22px;
+      border-radius: 14px;
+      border: 1px dashed #cbd5e1;
+      background: linear-gradient(135deg, #f8fafc, #eef2ff);
+      color: var(--muted);
+      min-height: 200px;
+      display: grid;
+      place-items: center;
+      font-size: 0.96rem;
+      text-align: center;
+      padding: 18px;
+    }
+
+    .social-highlight {
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      background: linear-gradient(180deg, #ffffff, #dbe7ff);
+      box-shadow: var(--shadow);
+    }
+
+    .social-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin: 28px 0;
+    }
+
+    .stat {
+      padding: 20px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: #fff;
+    }
+
+    .stat .number {
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat .label {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .system-box {
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 30px;
+      background: linear-gradient(180deg, #ffffff, #dce7ff);
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 26px;
+    }
+
+    .flow-step {
+      padding: 18px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+    }
+
+    .flow-step strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 0.98rem;
+    }
+
+    .contact-card {
+      padding: 32px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, #0f172a, #1e3a8a);
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin: 0 0 12px;
+      color: #fff;
+    }
+
+    .contact-card p,
+    .contact-card a {
+      color: rgba(255,255,255,0.85);
+    }
+
+    footer {
+      padding: 28px 0 48px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .case-study-grid,
+      .writing-grid,
+      .exec-grid,
+      .approach-grid,
+      .contact-grid,
+      .flow,
+      .social-stats {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero {
+        padding-top: 52px;
+      }
+
+      .hero-grid,
+      .case-study-grid,
+      .writing-grid,
+      .exec-grid,
+      .approach-grid,
+      .contact-grid,
+      .flow,
+      .social-stats {
+        grid-template-columns: 1fr;
+      }
+
+      section { padding: 68px 0; }
+      .card, .hero-card, .social-highlight, .system-box, .contact-card { padding: 22px; }
+      .hero h1 { font-size: 2.6rem; }
+    }
+  /* Carousel */
+.carousel { position: relative; overflow: hidden; border-radius: 14px; margin-top: 22px; }
+.carousel-track { display: flex; transition: transform 0.4s ease; }
+.carousel-slide { min-width: 100%; }
+.carousel img { width: 100%; display: block; }
+.carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(15,23,42,0.7); color: #fff; border: none; width: 36px; height: 36px; border-radius: 50%; cursor: pointer; }
+.carousel-btn.prev { left: 10px; }
+.carousel-btn.next { right: 10px; }
+.profile-img { width: 180px; height: 180px; object-fit: cover; border-radius: 50%; border: 3px solid #e5e7eb; box-shadow: var(--shadow); }
+</style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">Maryuri Alvarado Diaz</div>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#work">Work</a>
+        <a href="#writing">Writing</a>
+        <a href="#social">Social</a>
+        <a href="#execution">Execution</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">B2B Content Portfolio</div>
+          <h1>Executive-ready content, social strategy, and campaign execution.</h1>
+          <p class="lead">
+            I translate complex technical and research-driven topics into clear, polished content across email, LinkedIn, and multi-channel campaigns. My work is built for senior audiences and backed by performance.
+          </p>
+          <div class="proof-bar">
+            <div class="proof-pill">22.5x LinkedIn impression growth</div>
+            <div class="proof-pill">250K+ campaign reach</div>
+            <div class="proof-pill">25–38% email open rates</div>
+          </div>
+          <div class="cta-row">
+            <a class="button primary" href="#work">View Selected Work</a>
+            <a class="button primary" href="#contact">Contact Me</a>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Highlighted metrics">
+          <h3>Highlights</h3>
+          <div class="metric-list">
+            <div class="metric">
+              <div class="metric-value">900K+</div>
+              <div class="metric-label">LinkedIn impressions scaled from 40K through audience-focused content and stronger creative execution.</div>
+            </div>
+            <div class="metric">
+              <div class="metric-value">+97%</div>
+              <div class="metric-label">Growth in shares driven by clearer positioning, stronger hooks, and platform-native design.</div>
+            </div>
+            <div class="metric">
+              <div class="metric-value">100%</div>
+              <div class="metric-label">Of campaign visuals and digital assets created directly, with a focus on brand consistency and readability.</div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="container">
+        <div class="eyebrow">Selected Work</div>
+        <h2 class="section-title">Proof of writing, strategy, and execution.</h2>
+        <p class="section-intro">
+          These projects show how I approach B2B content from multiple angles: message development, audience alignment, visual execution, and measurable performance.
+        </p>
+
+        <div class="case-study-grid">
+          <article class="card">
+            <div class="card-label">Email Campaign</div>
+            <h3>B2B Newsletter Strategy and Execution</h3>
+            <p>Built and distributed newsletter content for technical and enterprise audiences, with a focus on structure, clarity, and engagement.</p>
+            <ul class="list">
+              <li>Wrote and structured newsletter copy</li>
+              <li>Designed supporting visuals in Canva</li>
+              <li>Executed campaigns in HubSpot</li>
+              <li>Refined layout and CTA placement using performance data</li>
+            </ul>
+            <div class="results">
+              <span class="result-pill">25–38% open rates</span>
+              <span class="result-pill">250K+ reach</span>
+              <span class="result-pill">Improved CTA visibility</span>
+            </div>
+            <a href="https://email.truenas.com/smart-updates-and-the-2026-truenas-plan" target="_blank" rel="noopener">View newsletter example</a>
+            <div class="carousel" data-carousel>
+  <div class="carousel-track">
+    <div class="carousel-slide"><img src="newsletter image 1.png" alt="Newsletter image 1"></div>
+    <div class="carousel-slide"><img src="newsletter image 2.png" alt="Newsletter image 2"></div>
+    <div class="carousel-slide"><img src="newsletter image 3.png" alt="Newsletter image 3"></div>
+    <div class="carousel-slide"><img src="newsletter image 4.png" alt="Newsletter image 4"></div>
+  </div>
+  <button class="carousel-btn prev">‹</button>
+  <button class="carousel-btn next">›</button>
+</div>
+          </article>
+
+          <article class="card">
+            <div class="card-label">Social Strategy</div>
+            <h3>LinkedIn Growth Through Content and Creative</h3>
+            <p>Owned social content strategy and execution for a technical B2B brand, pairing audience insight with platform-specific messaging.</p>
+            <ul class="list">
+              <li>Wrote and edited posts for brand and campaign goals</li>
+              <li>Designed static graphics and social carousels</li>
+              <li>Tracked engagement trends and adjusted messaging</li>
+              <li>Strengthened consistency across voice and visual style</li>
+            </ul>
+            <div class="results">
+              <span class="result-pill">40K → 900K+ impressions</span>
+              <span class="result-pill">+72% clicks</span>
+              <span class="result-pill">+49% interactions</span>
+            </div>
+            <a href="#social">See social highlights</a>
+            <div class="carousel" data-carousel>
+  <div class="carousel-track">
+    <div class="carousel-slide"><img src="linkedin1.jpg" alt="LinkedIn 1"></div>
+    <div class="carousel-slide"><img src="linkedin2.jpg" alt="LinkedIn 2"></div>
+  </div>
+  <button class="carousel-btn prev">‹</button>
+  <button class="carousel-btn next">›</button>
+</div>
+          </article>
+
+          <article class="card">
+            <div class="card-label">Case Study</div>
+            <h3>Customer Storytelling for a Technical Audience</h3>
+            <p>Developed long-form narrative content that translated complex product value into clear, compelling business outcomes.</p>
+            <ul class="list">
+              <li>Interview-driven case study development</li>
+              <li>Message shaping for mixed technical and business audiences</li>
+              <li>Story structure built around challenge, solution, and impact</li>
+            </ul>
+            <div class="results">
+              <span class="result-pill">Clearer customer narrative</span>
+              <span class="result-pill">Executive-friendly structure</span>
+              <span class="result-pill">Multi-channel reuse potential</span>
+            </div>
+            <a href="#writing">Read case study sample</a>
+            <div class="carousel" data-carousel>
+  <div class="carousel-track">
+    <div class="carousel-slide"><img src="case1.jpg" alt="Case Study 1"></div>
+    <div class="carousel-slide"><img src="case2.jpg" alt="Case Study 2"></div>
+  </div>
+  <button class="carousel-btn prev">‹</button>
+  <button class="carousel-btn next">›</button>
+</div>
+          </article>
+
+          <article class="card">
+            <div class="card-label">Short-Form Video</div>
+            <h3>Video Editing and Short-Form Video Experience</h3>
+            <p>Edited and produced short-form video content (reels/shorts) from long-form podcast and campaign footage, optimized for engagement and platform-native consumption.</p>
+            <ul class="list">
+              <li>Cut long-form footage into concise, high-impact clips</li>
+              <li>Added captions, motion elements, and pacing for retention</li>
+              <li>Optimized hooks, thumbnails, and formats for Instagram, LinkedIn, and YouTube</li>
+            </ul>
+            <div class="results">
+              <span class="result-pill">Expanded reach</span>
+              <span class="result-pill">Higher watch-through</span>
+              <span class="result-pill">Repurposed content at scale</span>
+            </div>
+            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:12px;">
+              <a class="button secondary" href="https://www.instagram.com/" target="_blank" rel="noopener">View Reels (Profile 1)</a>
+              <a class="button secondary" href="https://www.instagram.com/" target="_blank" rel="noopener">View Reels (Profile 2)</a>
+            </div>
+            <div class="carousel" data-carousel>
+              <div class="carousel-track">
+                <div class="carousel-slide"><img src="video1.jpg" alt="Short-form video 1"></div>
+                <div class="carousel-slide"><img src="video2.jpg" alt="Short-form video 2"></div>
+                <div class="carousel-slide"><img src="video3.jpg" alt="Short-form video 3"></div>
+              </div>
+              <button class="carousel-btn prev">‹</button>
+              <button class="carousel-btn next">›</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="writing">
+      <div class="container">
+        <div class="eyebrow">Writing Samples</div>
+        <h2 class="section-title">Long-form work built for clarity and credibility.</h2>
+        <p class="section-intro">
+          These samples reflect how I structure thought leadership, customer storytelling, and polished professional writing for a B2B audience.
+        </p>
+
+        <div class="writing-grid">
+          <article class="card">
+            <div class="card-label">Thought Leadership</div>
+            <h3>Case Study or Blog for a Professional Audience</h3>
+            <p>Use this section for a strong example that shows your ability to turn technical detail, customer insight, or research into an engaging narrative.</p>
+            <a href="#">Read sample</a>
+            <div class="placeholder">Paste a short quote or add a screenshot of the article header here</div>
+          </article>
+
+          <article class="card">
+            <div class="card-label">Article / Press Release</div>
+            <h3>Professional Writing with Strong Structure</h3>
+            <p>Use this space for a press release, article, or public-facing written asset that demonstrates polish, message control, and audience awareness.</p>
+            <a href="#">Read sample</a>
+            <div class="placeholder">Add article screenshot or excerpt here</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="social">
+      <div class="container">
+        <div class="eyebrow">LinkedIn & Social</div>
+        <h2 class="section-title">Owning and scaling social presence.</h2>
+        <div class="social-highlight">
+          <p class="section-intro" style="margin-bottom:0; max-width:100%;">
+            Led LinkedIn strategy and execution for a technical B2B brand, pairing message clarity, platform-native creative, and performance analysis to strengthen reach and engagement.
+          </p>
+
+          <div class="social-stats">
+            <div class="stat">
+              <div class="number">22.5x</div>
+              <div class="label">Impression growth</div>
+            </div>
+            <div class="stat">
+              <div class="number">+72%</div>
+              <div class="label">Clicks</div>
+            </div>
+            <div class="stat">
+              <div class="number">+97%</div>
+              <div class="label">Shares</div>
+            </div>
+            <div class="stat">
+              <div class="number">+49%</div>
+              <div class="label">Interactions</div>
+            </div>
+          </div>
+
+          <div class="case-study-grid">
+            <div class="card" style="box-shadow:none;">
+              <div class="card-label">What I Owned</div>
+              <ul class="list">
+                <li>Organic LinkedIn content strategy</li>
+                <li>Copywriting and post development</li>
+                <li>Graphic and carousel design</li>
+                <li>Performance tracking and iteration</li>
+              </ul>
+            </div>
+            <div class="placeholder">Add 2–3 LinkedIn post screenshots here</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="execution">
+      <div class="container">
+        <div class="eyebrow">Execution & Content Operations</div>
+        <h2 class="section-title">Work that reflects executive standards.</h2>
+        <p class="section-intro">
+          I approach content with the same level of rigor as strategy. From formatting and QA to final delivery, every asset is designed for clarity, consistency, and precision.
+        </p>
+
+        <div class="exec-grid">
+          <article class="card">
+            <div class="card-label">Email Execution</div>
+            <h3>Newsletter and Campaign Formatting</h3>
+            <p>Structured and deployed email content with close attention to visual hierarchy, readability, and CTA placement.</p>
+            <div class="placeholder">Add campaign email screenshot</div>
+          </article>
+
+          <article class="card">
+            <div class="card-label">QA & Precision</div>
+            <h3>Zero-defect Review Process</h3>
+            <p>Maintained consistency in messaging, formatting, and brand standards across campaign assets, social posts, and supporting materials.</p>
+            <ul class="list">
+              <li>Checked content for clarity and accuracy</li>
+              <li>Aligned tone across channels</li>
+              <li>Reviewed formatting before launch</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="card-label">Formatting</div>
+            <h3>Decks, PDFs, and Research Summaries</h3>
+            <p>Built polished, scannable materials that simplified technical information for external stakeholders and decision-makers.</p>
+            <div class="placeholder">Add PDF, one-sheet, or deck visual</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="system">
+      <div class="container">
+        <div class="eyebrow">Campaign Systems</div>
+        <h2 class="section-title">From insight to execution.</h2>
+        <div class="system-box">
+          <p class="section-intro" style="margin-bottom:0; max-width:100%;">
+            I build systems.
+          </p>
+          <div class="flow">
+            <div class="flow-step">
+              <strong>1. Insight</strong>
+              Research, product detail, or audience need identifies the message opportunity.
+            </div>
+            <div class="flow-step">
+              <strong>2. Message</strong>
+              Core narrative is shaped for the audience, channel, and business objective.
+            </div>
+            <div class="flow-step">
+              <strong>3. Execution</strong>
+              Email, social, and supporting assets are designed and published with brand consistency.
+            </div>
+            <div class="flow-step">
+              <strong>4. Optimization</strong>
+              Performance data informs stronger hooks, structure, and CTA placement.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="eyebrow">About</div>
+        <h2 class="section-title">Strategic, detail-oriented, and built for B2B content.</h2>
+        <div class="contact-grid">
+          <div class="card">
+            <p>
+              I’m a marketing professional with experience across B2B content strategy, social media, email campaigns, and multi-channel distribution. I approach content as a system, not a one-off asset. One idea should be able to show up across multiple platforms, in different formats, and still drive engagement.
+            </p>
+            <p>
+              My work focuses on turning complex and data-heavy topics into clear, structured content for executive audiences. I care about how information is presented, how it reads, and how easily it can be understood and acted on.
+            </p>
+            <p>
+              I’m naturally drawn to performance. I love seeing numbers grow, and I’m always looking for ways to improve on previous results, whether that’s open rates, engagement, or overall reach.
+            </p>
+            <p>
+              To me, good content is never static. There’s always something to refine, test, or improve. I bring a mix of writing, design, analytics, and performance thinking, with a strong focus on clarity, audience alignment, and measurable impact. I care about the details and how everything comes together in the final output.
+            </p>
+            <div style="margin-top:18px; display:flex; justify-content:center;">
+              <img src="headshot.png" alt="Maryuri Alvarado Diaz" class="profile-img">
+            </div>
+          </div>
+          <div>
+            <div class="card-label" style="margin-bottom:18px;">How I Work</div>
+            <div class="approach-grid" style="grid-template-columns:1fr; gap:18px;">
+              <div class="card">
+                <h3 style="font-size:1.35rem;">Translate Complexity</h3>
+                <p>I simplify technical and data-heavy topics into clear narratives.</p>
+              </div>
+              <div class="card">
+                <h3 style="font-size:1.35rem;">Execute with Precision</h3>
+                <p>I focus on formatting, clarity, and consistency so every piece meets a high standard of quality.</p>
+              </div>
+              <div class="card">
+                <h3 style="font-size:1.35rem;">Improve Through Performance</h3>
+                <p>I track results, learn quickly, and refine messaging to continuously improve outcomes.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container contact-grid">
+        <div class="contact-card">
+          <h3>Let’s connect.</h3>
+          <p>I’m always open to conversations around B2B marketing, content strategy, and roles where I can contribute to high-quality, research-driven work.</p>
+          <p>If you're looking for someone who can turn complex ideas into clear, executive-ready content and continuously improve performance, I’d love to connect.</p>
+          <p>
+            <a href="mailto:alvaradomaryuri828@gmail.com">alvaradomaryuri828@gmail.com</a><br>
+            <a href="#">LinkedIn</a><br>
+            <a href="#">Resume PDF</a>
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-label">What you can expect working with me</div>
+          <ul class="list">
+            <li>Clear, structured communication</li>
+            <li>Strong attention to detail and polish</li>
+            <li>Content built with performance in mind</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">Portfolio example website for a B2B Content & Creative application.</div>
+  </footer>
+<script>
+  document.querySelectorAll('[data-carousel]').forEach(carousel => {
+    const track = carousel.querySelector('.carousel-track');
+    const slides = Array.from(track.children);
+    const nextBtn = carousel.querySelector('.next');
+    const prevBtn = carousel.querySelector('.prev');
+    let index = 0;
+
+    function update() {
+      track.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    nextBtn.addEventListener('click', () => {
+      index = (index + 1) % slides.length;
+      update();
+    });
+
+    prevBtn.addEventListener('click', () => {
+      index = (index - 1 + slides.length) % slides.length;
+      update();
+    });
+  });
+</script>
+</body>
+</html>
